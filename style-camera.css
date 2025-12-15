@@ -1,0 +1,130 @@
+* {
+   
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+body {
+    
+    background-color: #f8f9fa; 
+    
+    color: #333; 
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex; 
+    flex-direction: column;
+    text-align: initial; 
+}
+
+
+nav {
+    
+    background-color: #28306e; 
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap; 
+    position: sticky; 
+    top: 0;
+    z-index: 1000;
+}
+
+nav a {
+    color: #aaaeee; 
+    margin: 0; 
+    text-decoration: none;
+    font-weight: bold;
+    
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav a:hover {
+    
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+h1 {
+    
+    color: #28306e; 
+    font-size: 2.5rem;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 30px; 
+    margin-bottom: 10px;
+    padding: 0 20px;
+}
+
+.video-container {
+  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 20px auto 40px auto; 
+    padding: 0 20px;
+}
+
+
+video {
+  
+    width: 100%;
+    max-width: 640px; 
+    border: 8px solid #B5B8DB; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    height: auto; 
+    display: block;
+}
+
+
+#output {
+    width: 100%;
+    max-width: 640px; 
+    padding: 20px 30px;
+    text-align: center;
+    background-color: #28306e; 
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+    
+    .video-container {
+        padding: 0 10px;
+        gap: 20px;
+    }
+
+    video {
+        border-width: 4px; 
+    }
+
+    #output {
+        font-size: 1.2rem;
+        padding: 15px 20px;
+    }
+}

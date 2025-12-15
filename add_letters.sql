@@ -1,0 +1,62 @@
+-- ملف SQL لإضافة الحروف والإشارات في قاعدة البيانات
+-- استخدم هذا الملف بعد استخراج الصور وتسميتها
+
+-- الحروف العربية
+INSERT INTO sign_letters (letter, image_path) VALUES
+('أ', 'images/letters/أ.png'),
+('ب', 'images/letters/ب.png'),
+('ت', 'images/letters/ت.png'),
+('ج', 'images/letters/ج.png'),
+('ح', 'images/letters/ح.png'),
+('خ', 'images/letters/خ.png'),
+('د', 'images/letters/د.png'),
+('ذ', 'images/letters/ذ.png'),
+('ر', 'images/letters/ر.png'),
+('ز', 'images/letters/ز.png'),
+('س', 'images/letters/س.png'),
+('ش', 'images/letters/ش.png'),
+('ص', 'images/letters/ص.png'),
+('ض', 'images/letters/ض.png'),
+('ط', 'images/letters/ط.png'),
+('ظ', 'images/letters/ظ.png'),
+('ع', 'images/letters/ع.png'),
+('غ', 'images/letters/غ.png'),
+('ف', 'images/letters/ف.png'),
+('ق', 'images/letters/ق.png'),
+('ك', 'images/letters/ك.png'),
+('ل', 'images/letters/ل.png'),
+('م', 'images/letters/م.png'),
+('ن', 'images/letters/ن.png'),
+('ه', 'images/letters/ه.png'),
+('و', 'images/letters/و.png'),
+('ي', 'images/letters/ي.png');
+
+-- الحروف الإنجليزية (ASL)
+INSERT INTO sign_letters (letter, image_path) VALUES
+('A', 'images/letters/A.png'),
+('B', 'images/letters/B.png'),
+('C', 'images/letters/C.png'),
+('D', 'images/letters/D.png'),
+('E', 'images/letters/E.png'),
+('F', 'images/letters/F.png'),
+('G', 'images/letters/G.png'),
+('H', 'images/letters/H.png'),
+('I', 'images/letters/I.png'),
+('J', 'images/letters/J.png'),
+('K', 'images/letters/K.png'),
+('L', 'images/letters/L.png'),
+('M', 'images/letters/M.png'),
+('N', 'images/letters/N.png'),
+('O', 'images/letters/O.png'),
+('P', 'images/letters/P.png'),
+('Q', 'images/letters/Q.png'),
+('R', 'images/letters/R.png'),
+('S', 'images/letters/S.png'),
+('T', 'images/letters/T.png'),
+('U', 'images/letters/U.png'),
+('V', 'images/letters/V.png'),
+('W', 'images/letters/W.png'),
+('X', 'images/letters/X.png'),
+('Y', 'images/letters/Y.png'),
+('Z', 'images/letters/Z.png');
+

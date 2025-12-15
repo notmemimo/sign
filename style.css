@@ -1,0 +1,769 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex; /* لضمان أن الـ footer يلتصق بالأسفل */
+    flex-direction: column;
+}
+
+/* شريط التنقل (Top Navigation) */
+.top-nav {
+    background-color: #28306e; /* أزرق داكن جذاب */
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 10px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+    flex-wrap: wrap; 
+}
+
+.top-nav a {
+    color: #aaaeee; /* لون أزرق فاتح / رمادي فاتح */
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.1rem;
+    transition: color 0.3s, transform 0.3s;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+.top-nav a:hover {
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* حالة الرابط النشط */
+.top-nav a.active {
+    background-color: #1a235c;
+    color: white;
+}
+
+/* تصميم الرأس المميز (يستخدم في صفحات المحتوى) */
+.star-container {
+    position: relative;
+    height: 80px;
+    margin-bottom: 30px;
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.diamond-star {
+    font-size: 4rem;
+    color: #28306e;
+    text-shadow: -4px 4px 0 #B5B8DB; /* ظل متدرج لإضافة عمق */
+    z-index: 2;
+    margin-left: 20px;
+}
+
+.extended-rectangle {
+    flex-grow: 1;
+    height: 25px;
+    background-color: #28306e;
+    box-shadow: -2px 2px 0 #B5B8DB;
+    border-radius: 0 4px 4px 0;
+    margin-right: 20px;
+    max-width: 600px;
+}
+
+header {
+    text-align: center;
+    padding: 30px 20px 30px 20px;
+}
+
+.main-title {
+    color: #28306e;
+    font-size: 2.5rem;
+    margin-bottom: 25px;
+    font-weight: bold;
+}
+
+.header-rectangle {
+    width: 80%;
+    height: 120px;
+    background-color: #28306e;
+    margin: 0 auto 30px auto;
+    border-radius: 15px;
+    box-shadow: -8px 8px 0 #B5B8DB;
+    max-width: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #aaaeee;
+    font-size: 1.5rem;
+    font-style: italic;
+}
+
+
+/* الحاوية الرئيسية (لصفحات المحتوى - مثل صفحة الترجمة) */
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    padding: 40px 30px;
+    flex-grow: 1; /* للسماح للحاوية بملء المساحة المتبقية قبل الـ footer */
+}
+
+.container h1 {
+    color: #28306e;
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+/* قسم الترجمة (يستخدم في صفحات أخرى) */
+.translation-section {
+    background-color: #f1f2f6;
+    padding: 30px 20px;
+    margin-top: 40px;
+    border-radius: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.translation-section form > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+/* textarea (يستخدم في صفحات أخرى) */
+textarea {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    border: 2px solid #aaaeee;
+    border-radius: 12px;
+    resize: none;
+    background-color: #fafafa;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+    transition: border 0.3s;
+}
+
+textarea:focus {
+    border-color: #28306e;
+    outline: none;
+}
+
+/* ================================================= */
+/* أنماط صفحة الترحيب (Welcome) */
+/* ================================================= */
+
+.welcome-container {
+    max-width: 550px; 
+    margin: 60px auto;
+    background-color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.15); 
+    padding: 40px 30px;
+    text-align: center;
+    border-top: 8px solid #28306e; 
+}
+
+.logo-name {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #ddd;
+}
+
+.logo-name img {
+    width: 90px; 
+    height: 90px;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 4px solid #aaaeee;
+    box-shadow: 0 4px 15px rgba(40, 48, 110, 0.3);
+    object-fit: cover; 
+}
+
+.logo-name h1 {
+    color: #28306e;
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.info-section {
+    margin: 25px 0;
+    padding: 20px 25px;
+    background-color: #f1f2f6;
+    border-radius: 12px;
+    border-right: 5px solid #B5B8DB; 
+    text-align: right; 
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.info-section h2 {
+    color: #28306e;
+    font-size: 1.4rem;
+    margin-bottom: 12px;
+    font-weight: 600;
+}
+
+.info-section p {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #555;
+}
+
+/* تنسيق حقول الإدخال المشتركة بين كل النماذج */
+input[type="text"] {
+    width: 85%;
+    max-width: 300px;
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    border: 2px solid #aaaeee;
+    border-radius: 30px; 
+    text-align: center;
+    background-color: #fafafa;
+    transition: all 0.3s ease;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+input[type="text"]:focus {
+    border-color: #28306e;
+    outline: none;
+    box-shadow: 0 0 12px rgba(40, 48, 110, 0.3);
+}
+
+/* حالة الإدخال المعطلة */
+input[type="text"][disabled] {
+    background-color: #eef1f9;
+    color: #28306e;
+    font-weight: 700;
+    border-style: solid;
+    cursor: default;
+    box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-name {
+    font-size: 1.4rem;
+    color: #28306e;
+    font-weight: bold;
+    margin-top: 10px;
+    padding: 10px 0;
+}
+
+/* أنماط الأزرار المشتركة (لكل الأزرار في الموقع) */
+.translation-section button,
+.translation-section form > div a,
+.welcome-container button { 
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    text-align: center;
+    padding: 12px 30px;
+    border-radius: 30px;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* نمط الأزرار الأساسي (ترجمة، إرسال، إبدأ) */
+.translation-section button,
+.welcome-container button {
+    background-color: #28306e;
+    color: #aaaeee;
+    border: none;
+    min-width: 150px;
+}
+
+.translation-section button:hover,
+.welcome-container button:hover {
+    background-color: #1a235c;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* نمط رابط "الإشارة -> نص (صفحة عكسية)" */
+.translation-section form > div a {
+    background-color: transparent;
+    color: #28306e;
+    border: 2px solid #28306e;
+    line-height: 1;
+    min-width: 150px;
+}
+
+.translation-section form > div a:hover {
+    background-color: #28306e;
+    color: white;
+    transform: translateY(-2px);
+}
+
+/* تنسيق نموذج إدخال الاسم لصفحة الترحيب */
+.welcome-container form {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+/* ================================================= */
+/* أنماط الـ Footer */
+/* ================================================= */
+
+.site-footer {
+    margin-top: auto; /* يدفع الـ footer إلى الأسفل */
+    background-color: #28306e;
+    color: #aaaeee;
+    padding: 25px 0;
+    text-align: center;
+    border-top: 5px solid #1a235c;
+}
+
+.site-footer p {
+    margin: 5px 0;
+    font-size: 0.9rem;
+}
+
+.site-footer a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+    margin: 0 10px;
+}
+
+.site-footer a:hover {
+    color: #B5B8DB; /* لون التظليل الفاتح */
+    text-decoration: underline;
+}
+
+/* ================================================= */
+/* أنماط عرض الترجمة (translate.php) */
+/* ================================================= */
+
+.sign-line {
+    display: flex; /* تفعيل الـ Flexbox */
+    flex-wrap: wrap; /* السماح للعناصر بالانتقال إلى سطر جديد */
+    justify-content: center; /* توسيط العناصر في المنتصف */
+    gap: 15px; /* مسافة بين العناصر */
+    padding: 30px; /* زيادة التباعد الداخلي */
+    margin: 30px 0;
+    background-color: #f1f2f6;
+    border-radius: 15px; /* زيادة نصف القطر ليتناسب مع الحاوية */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.05); /* ظل داخلي خفيف */
+}
+
+.sign-item {
+    display: flex;
+    flex-direction: column; /* ترتيب الصورة والنص عمودياً */
+    align-items: center;
+    text-align: center;
+    margin-bottom: 10px; /* مسافة بسيطة بين الأسطر المتعددة */
+    padding: 5px;
+    transition: background-color 0.3s;
+}
+
+.sign-item img {
+    width: 90px; /* حجم موحد للصور */
+    height: 90px;
+    object-fit: contain; /* لضمان عرض الصورة بالكامل دون قص */
+    border: 2px solid #aaaeee; /* إطار بنفسجي فاتح */
+    border-radius: 10px; /* حواف أكثر استدارة */
+    background-color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.sign-item img:hover {
+    transform: scale(1.05); /* تأثير بسيط عند المرور بالماوس */
+    box-shadow: 0 6px 12px rgba(40, 48, 110, 0.3); /* ظل أزرق عند التفاعل */
+}
+
+.sign-item figcaption {
+    margin-top: 8px;
+    font-size: 0.9rem;
+    font-weight: 700; /* جعل الخط أغمق */
+    color: #28306e; /* استخدام اللون الأساسي */
+}
+
+.sign-space {
+    width: 25px; /* زيادة حجم الفراغ بين الكلمات */
+    height: 1px;
+    visibility: hidden; /* إخفاء العنصر مع الاحتفاظ بالمساحة */
+    margin: 0 15px;
+}
+
+.container p {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 1.1rem;
+}
+
+.container p a {
+    color: #28306e;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.container p a:hover {
+    text-decoration: underline;
+    color: #1a235c;
+}
+
+/* ================================================= */
+/* أنماط صفحة "من نحن" (about_us.php) */
+/* ================================================= */
+
+.about-header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed #B5B8DB; /* خط فاصل خفيف */
+}
+
+.about-header h1 {
+    color: #28306e;
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+.intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.7;
+}
+
+.vision-mission-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+/* استخدام نفس تصميم الصندوق المميز */
+.content-box {
+    background: linear-gradient(135deg, #28306e, #3a4280);
+    color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    min-height: 200px; /* لضمان تساوي ارتفاع الصناديق */
+}
+
+.content-box:hover {
+    transform: translateY(-5px);
+}
+
+.content-box h2 {
+    color: #aaaeee; /* لون أفتح للعناوين الداخلية */
+    font-size: 1.6rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #B5B8DB;
+    padding-bottom: 8px;
+    font-weight: 700;
+}
+
+.content-box p {
+    text-align: right;
+    font-size: 1rem;
+    line-height: 1.7;
+    margin-top: 0;
+}
+
+/* قسم التواصل */
+.contact-section {
+    margin-top: 30px;
+    padding: 25px;
+    background-color: #f1f2f6;
+    border-radius: 15px;
+    border: 1px solid #ddd;
+}
+
+.contact-section h2 {
+    color: #28306e;
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.contact-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 450px;
+}
+
+.contact-list li {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.contact-list li:last-child {
+    border-bottom: none;
+}
+
+.contact-icon {
+    font-size: 1.4rem;
+    color: #28306e;
+    margin-left: 15px;
+}
+
+.contact-list a {
+    color: #28306e;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.contact-list a:hover {
+    color: #1a235c;
+    text-decoration: underline;
+}
+
+/* ================================================= */
+/* أنماط صفحة الكاميرا (camera.html) الجديدة */
+/* ================================================= */
+
+.video-output-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.video-container-box {
+    position: relative;
+    width: 100%;
+    max-width: 640px; /* الحجم الأصلي للفيديو */
+    border: 4px solid #28306e; /* إطار جذاب بلون التطبيق */
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    background-color: #000;
+    overflow: hidden;
+    /* للحفاظ على نسبة العرض إلى الارتفاع (4:3) في الحاويات المتجاوبة */
+    aspect-ratio: 4 / 3; 
+}
+
+.input-video, .output_canvas {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    object-fit: cover; /* لضمان ملء المساحة دون تشويه */
+    transform: scaleX(-1); /* عكس الصورة أفقياً لتبدو كمرآة */
+}
+
+.input-video {
+    visibility: hidden; /* إخفاء وسم الفيديو الأصلي والاعتماد على الـ Canvas */
+}
+
+.sign-translation-output {
+    /* تطبيق نفس نمط الصندوق المميز */
+    width: 100%;
+    max-width: 640px; 
+    padding: 20px 30px;
+    text-align: center;
+    background: linear-gradient(135deg, #28306e, #3a4280);
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    min-height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sign-translation-output p {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+
+/* ------------------------------------------------ */
+/* التصميم المتجاوب */
+/* ------------------------------------------------ */
+
+@media (max-width: 768px) {
+    /* تنسيقات عامة للصفحات */
+    .container {
+        margin: 20px auto;
+        padding: 25px 15px;
+    }
+    
+    .vision-mission-grid {
+        grid-template-columns: 1fr; /* عرض عمودي في الأجهزة الصغيرة */
+        gap: 20px;
+    }
+
+    .about-header h1 {
+        font-size: 2rem;
+    }
+
+    .intro-text {
+        font-size: 1rem;
+    }
+
+    /* تجاوب خاص بصفحة الكاميرا */
+    .video-container-box {
+        max-width: 100%; /* اجعل الفيديو يملأ عرض الشاشة */
+        /* يمكن ترك نسبة العرض إلى الارتفاع كما هي أو تعديلها حسب الحاجة */
+        /* aspect-ratio: 16 / 9; */
+    }
+    
+    .sign-translation-output p {
+        font-size: 1.2rem;
+    }
+    
+    /* تنسيق صور الإشارة على الأجهزة الصغيرة */
+    .sign-item img {
+        width: 60px;
+        height: 60px;
+    }
+
+    .contact-list li {
+        font-size: 1rem;
+    }
+
+    /* ------------------- */
+    /* التجاوب للأقسام الأخرى (الإشارة -> نص) */
+    /* ------------------- */
+    .content-section {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .about-us, .about-sign-language {
+        text-align: right; 
+    }
+    .site-footer p {
+        font-size: 0.8rem;
+    }
+    .site-footer a {
+        display: block;
+        padding: 5px;
+    }
+
+}
+
+
+/* ---------------------------------------------------- */
+/* ملاحظة: الأكواد التالية خاصة بصفحة "الإشارة -> نص"  */
+/* ---------------------------------------------------- */
+
+.content-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-us {
+    text-align: right;
+}
+
+.about-sign-language {
+    text-align: left;
+}
+
+.about-us h2, .about-sign-language h2 {
+    color: #28306e;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.translation-container {
+    background-color: #aaaeee;
+    border-radius: 20px;
+    padding: 30px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.input-output-container {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.text-box {
+    position: relative;
+}
+
+.text-box h3 {
+    color: #28306e;
+    margin-bottom: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.input-box, .output-box {
+    background-color: white;
+    border-radius: 12px;
+    padding: 20px;
+    min-height: 150px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1.0rem;
+    line-height: 1.6;
+}
+
+.input-box {
+    border: 2px dashed #ddd;
+}
+
+.output-box {
+    border: 2px solid #eee;
+}
+
+.vertical-line {
+    width: 2px;
+    background-color: #aaaeee;
+    height: 180px;
+    margin-top: 30px;
+}
+
+.translate-btn {
+    background-color: #28306e;
+    color: #aaaeee;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    width: fit-content;
+}
+
+.translate-btn:hover {
+    background-color: #1a235c;
+    transform: translateY(-2px);
+}
